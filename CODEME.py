@@ -9,7 +9,7 @@ def calculate_area(shape, dimensions):
         length, width = dimensions
         return length * width
     elif shape.lower() == "circle":
-        radius, = dimensions
+        radius = dimensions
         return 3.14159 * (radius ** 2)
     else:
         return 0
@@ -44,14 +44,14 @@ print(reverse_words("hello world"))
 
 def analyze_list(numbers):
     stats = {
-        minimum: min(numbers),
-        maximum: max(numbers),
-        average: sum(numbers) / len(numbers)
+        "minimum": min(numbers),
+        "maximum": max(numbers),
+        "average": sum(numbers) / len(numbers)
     }
     return stats
 
-print(analyze_list[1,2,3,4,3,2,1,5,6,4,6,7,5,8,9])
-
+num=[1,2,3,4,3,2,1,5,6,4,6,7,5,8,9]
+print(analyze_list(num))
 
 # Filtering with Lambda:
 # Create a list of product names (strings).
@@ -62,8 +62,8 @@ print(analyze_list[1,2,3,4,3,2,1,5,6,4,6,7,5,8,9])
 def filter_short_names(names, max_length):
     return list(filter(lambda name: len(name) < max_length, names))
 
-names = ["Aditya", "Edwin", "Gautam","Shiva"]
-print(filter_short_names(name, 4))
+names = ["Aditya", "Edwin", "Gautam", "Shiva"]
+print(filter_short_names(names, 6))
 
 
 # Text Analyzer (Bonus Challenge):
